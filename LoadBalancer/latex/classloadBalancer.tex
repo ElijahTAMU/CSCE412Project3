@@ -1,0 +1,98 @@
+\hypertarget{classloadBalancer}{}\doxysection{load\+Balancer Class Reference}
+\label{classloadBalancer}\index{loadBalancer@{loadBalancer}}
+
+
+Manages the distribution of requests across multiple webservers.  
+
+
+
+
+{\ttfamily \#include $<$load\+Balancer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classloadBalancer_ad0dc2c44f407e718842978ef55e1d993}{balance\+Requests}} ()
+\begin{DoxyCompactList}\small\item\em Distributes requests from the queue to available webservers, allocating new servers if necessary. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classloadBalancer_ae4ef1a2f718ddd5b2af6439fa0a87f9c}{remove\+Server}} (int index)
+\begin{DoxyCompactList}\small\item\em Removes a webserver at the specified index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::queue$<$ \mbox{\hyperlink{classrequest}{request}} $>$ \mbox{\hyperlink{classloadBalancer_ac6ef1b9443e40a8d8e5c10a0465c19d9}{request\+Queue}}
+\begin{DoxyCompactList}\small\item\em Queue holding incoming requests to be distributed. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classwebserver}{webserver}} $>$ \mbox{\hyperlink{classloadBalancer_a03bbf0098f1dedc7a0852d088f734a08}{this\+Webservers}}
+\begin{DoxyCompactList}\small\item\em Vector of active webservers handling requests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the distribution of requests across multiple webservers. 
+
+Holds a queue of incoming requests and a vector of webservers to which requests are assigned. Responsible for balancing load and server allocation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classloadBalancer_ad0dc2c44f407e718842978ef55e1d993}\label{classloadBalancer_ad0dc2c44f407e718842978ef55e1d993}} 
+\index{loadBalancer@{loadBalancer}!balanceRequests@{balanceRequests}}
+\index{balanceRequests@{balanceRequests}!loadBalancer@{loadBalancer}}
+\doxysubsubsection{\texorpdfstring{balanceRequests()}{balanceRequests()}}
+{\footnotesize\ttfamily void load\+Balancer\+::balance\+Requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Distributes requests from the queue to available webservers, allocating new servers if necessary. 
+
+Distributes requests from the queue to available webservers in a round-\/robin style.
+
+Iterates through the list of servers and assigns requests to servers open to receiving them. If no server can take more requests, allocates a new webserver and continues distributing. \mbox{\Hypertarget{classloadBalancer_ae4ef1a2f718ddd5b2af6439fa0a87f9c}\label{classloadBalancer_ae4ef1a2f718ddd5b2af6439fa0a87f9c}} 
+\index{loadBalancer@{loadBalancer}!removeServer@{removeServer}}
+\index{removeServer@{removeServer}!loadBalancer@{loadBalancer}}
+\doxysubsubsection{\texorpdfstring{removeServer()}{removeServer()}}
+{\footnotesize\ttfamily void load\+Balancer\+::remove\+Server (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Removes a webserver at the specified index. 
+
+Removes a webserver at the specified index from the list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the server to remove.\\
+\hline
+\end{DoxyParams}
+Checks if the index is valid, logs the deallocation, and erases the server from the vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the webserver to remove. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classloadBalancer_ac6ef1b9443e40a8d8e5c10a0465c19d9}\label{classloadBalancer_ac6ef1b9443e40a8d8e5c10a0465c19d9}} 
+\index{loadBalancer@{loadBalancer}!requestQueue@{requestQueue}}
+\index{requestQueue@{requestQueue}!loadBalancer@{loadBalancer}}
+\doxysubsubsection{\texorpdfstring{requestQueue}{requestQueue}}
+{\footnotesize\ttfamily std\+::queue$<$\mbox{\hyperlink{classrequest}{request}}$>$ load\+Balancer\+::request\+Queue}
+
+
+
+Queue holding incoming requests to be distributed. 
+
+\mbox{\Hypertarget{classloadBalancer_a03bbf0098f1dedc7a0852d088f734a08}\label{classloadBalancer_a03bbf0098f1dedc7a0852d088f734a08}} 
+\index{loadBalancer@{loadBalancer}!thisWebservers@{thisWebservers}}
+\index{thisWebservers@{thisWebservers}!loadBalancer@{loadBalancer}}
+\doxysubsubsection{\texorpdfstring{thisWebservers}{thisWebservers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classwebserver}{webserver}}$>$ load\+Balancer\+::this\+Webservers}
+
+
+
+Vector of active webservers handling requests. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{loadBalancer_8h}{load\+Balancer.\+h}}\item 
+\mbox{\hyperlink{loadBalancer_8cpp}{load\+Balancer.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,150 @@
+\hypertarget{classwebserver}{}\doxysection{webserver Class Reference}
+\label{classwebserver}\index{webserver@{webserver}}
+
+
+Represents a webserver that holds and processes network requests.  
+
+
+
+
+{\ttfamily \#include $<$webserver.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwebserver_a228035eb951291e588d1ed826310d6e4}{webserver}} (int id)
+\begin{DoxyCompactList}\small\item\em Constructs a webserver with a unique ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwebserver_a28da05a35f9aaafce2e78b2800f9056b}{process\+Requests}} (int time)
+\begin{DoxyCompactList}\small\item\em Processes requests up to the given time, removing completed ones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwebserver_a990716060bdbe6d21050ef1084b3765c}{ask\+For\+Requests}} ()
+\begin{DoxyCompactList}\small\item\em Marks the server as open to accept new requests and logs this event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwebserver_a8f3bedc5b7d752319616ef089f596775}{stop\+Taking\+Requests}} ()
+\begin{DoxyCompactList}\small\item\em Marks the server as closed to new requests and logs this event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{classrequest}{request}} $>$ \mbox{\hyperlink{classwebserver_a29678af62c97a62b9d4ad41f51f697da}{requests}}
+\begin{DoxyCompactList}\small\item\em List of current requests being handled by the server. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classwebserver_abba9cd076b08ea359bf45e8515f8c9a3}{request\+Cap}}
+\begin{DoxyCompactList}\small\item\em Maximum capacity of requests the server can handle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classwebserver_ad594f32de828f62961fee724762b258d}{open\+To\+Requests}}
+\begin{DoxyCompactList}\small\item\em Indicates if the server is accepting new requests. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classwebserver_ae957317287e468f88751c1d2596846eb}{name}}
+\begin{DoxyCompactList}\small\item\em Unique name/\+ID of the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a webserver that holds and processes network requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classwebserver_a228035eb951291e588d1ed826310d6e4}\label{classwebserver_a228035eb951291e588d1ed826310d6e4}} 
+\index{webserver@{webserver}!webserver@{webserver}}
+\index{webserver@{webserver}!webserver@{webserver}}
+\doxysubsubsection{\texorpdfstring{webserver()}{webserver()}}
+{\footnotesize\ttfamily webserver\+::webserver (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a webserver with a unique ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier for this webserver, converted to string as the name. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwebserver_a990716060bdbe6d21050ef1084b3765c}\label{classwebserver_a990716060bdbe6d21050ef1084b3765c}} 
+\index{webserver@{webserver}!askForRequests@{askForRequests}}
+\index{askForRequests@{askForRequests}!webserver@{webserver}}
+\doxysubsubsection{\texorpdfstring{askForRequests()}{askForRequests()}}
+{\footnotesize\ttfamily void webserver\+::ask\+For\+Requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Marks the server as open to accept new requests and logs this event. 
+
+Marks the server as open to receiving new requests and logs this event. \mbox{\Hypertarget{classwebserver_a28da05a35f9aaafce2e78b2800f9056b}\label{classwebserver_a28da05a35f9aaafce2e78b2800f9056b}} 
+\index{webserver@{webserver}!processRequests@{processRequests}}
+\index{processRequests@{processRequests}!webserver@{webserver}}
+\doxysubsubsection{\texorpdfstring{processRequests()}{processRequests()}}
+{\footnotesize\ttfamily void webserver\+::process\+Requests (\begin{DoxyParamCaption}\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+Processes requests up to the given time, removing completed ones. 
+
+Processes the requests assigned to the server at a given time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & The current time step to check requests against.\\
+\hline
+\end{DoxyParams}
+Removes requests from the queue that have a timestamp less than or equal to the current time, then updates the server\textquotesingle{}s state to open or closed to new requests based on load.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & The current simulation time to check requests against. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classwebserver_a8f3bedc5b7d752319616ef089f596775}\label{classwebserver_a8f3bedc5b7d752319616ef089f596775}} 
+\index{webserver@{webserver}!stopTakingRequests@{stopTakingRequests}}
+\index{stopTakingRequests@{stopTakingRequests}!webserver@{webserver}}
+\doxysubsubsection{\texorpdfstring{stopTakingRequests()}{stopTakingRequests()}}
+{\footnotesize\ttfamily void webserver\+::stop\+Taking\+Requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Marks the server as closed to new requests and logs this event. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classwebserver_ae957317287e468f88751c1d2596846eb}\label{classwebserver_ae957317287e468f88751c1d2596846eb}} 
+\index{webserver@{webserver}!name@{name}}
+\index{name@{name}!webserver@{webserver}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string webserver\+::name}
+
+
+
+Unique name/\+ID of the server. 
+
+\mbox{\Hypertarget{classwebserver_ad594f32de828f62961fee724762b258d}\label{classwebserver_ad594f32de828f62961fee724762b258d}} 
+\index{webserver@{webserver}!openToRequests@{openToRequests}}
+\index{openToRequests@{openToRequests}!webserver@{webserver}}
+\doxysubsubsection{\texorpdfstring{openToRequests}{openToRequests}}
+{\footnotesize\ttfamily bool webserver\+::open\+To\+Requests}
+
+
+
+Indicates if the server is accepting new requests. 
+
+\mbox{\Hypertarget{classwebserver_abba9cd076b08ea359bf45e8515f8c9a3}\label{classwebserver_abba9cd076b08ea359bf45e8515f8c9a3}} 
+\index{webserver@{webserver}!requestCap@{requestCap}}
+\index{requestCap@{requestCap}!webserver@{webserver}}
+\doxysubsubsection{\texorpdfstring{requestCap}{requestCap}}
+{\footnotesize\ttfamily int webserver\+::request\+Cap}
+
+
+
+Maximum capacity of requests the server can handle. 
+
+\mbox{\Hypertarget{classwebserver_a29678af62c97a62b9d4ad41f51f697da}\label{classwebserver_a29678af62c97a62b9d4ad41f51f697da}} 
+\index{webserver@{webserver}!requests@{requests}}
+\index{requests@{requests}!webserver@{webserver}}
+\doxysubsubsection{\texorpdfstring{requests}{requests}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classrequest}{request}}$>$ webserver\+::requests}
+
+
+
+List of current requests being handled by the server. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{webserver_8h}{webserver.\+h}}\item 
+\mbox{\hyperlink{webserver_8cpp}{webserver.\+cpp}}\end{DoxyCompactItemize}

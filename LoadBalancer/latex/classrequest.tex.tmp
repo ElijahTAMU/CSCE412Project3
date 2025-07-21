@@ -1,0 +1,104 @@
+\hypertarget{classrequest}{}\doxysection{request Class Reference}
+\label{classrequest}\index{request@{request}}
+
+
+Represents a network request with source and destination IPs and a timestamp.  
+
+
+
+
+{\ttfamily \#include $<$request.\+h$>$}
+
+
+
+Collaboration diagram for request\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrequest_ae49e0b00a54017889a18e955b88087f6}{request}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrequest_ae3d58dee87ea284458f84467444b489a}{request}} (int $\ast$in, int $\ast$out, int t)
+\begin{DoxyCompactList}\small\item\em Constructs a request with given source/destination \mbox{\hyperlink{structIP}{IP}} arrays and time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structIP}{IP}} \mbox{\hyperlink{classrequest_a3ca4c2dfad44d32b896d84e60c02b363}{in\+IP}}
+\begin{DoxyCompactList}\small\item\em Incoming/source \mbox{\hyperlink{structIP}{IP}} address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structIP}{IP}} \mbox{\hyperlink{classrequest_a980fd6be5ea34d88c07b3c963f7f39c4}{out\+IP}}
+\begin{DoxyCompactList}\small\item\em Outgoing/destination \mbox{\hyperlink{structIP}{IP}} address. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classrequest_a153095eecc7c0aae5551654c3304faad}{time}}
+\begin{DoxyCompactList}\small\item\em Timestamp or time associated with the request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a network request with source and destination IPs and a timestamp. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrequest_ae49e0b00a54017889a18e955b88087f6}\label{classrequest_ae49e0b00a54017889a18e955b88087f6}} 
+\index{request@{request}!request@{request}}
+\index{request@{request}!request@{request}}
+\doxysubsubsection{\texorpdfstring{request()}{request()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily request\+::request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classrequest_ae3d58dee87ea284458f84467444b489a}\label{classrequest_ae3d58dee87ea284458f84467444b489a}} 
+\index{request@{request}!request@{request}}
+\index{request@{request}!request@{request}}
+\doxysubsubsection{\texorpdfstring{request()}{request()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily request\+::request (\begin{DoxyParamCaption}\item[{int $\ast$}]{in,  }\item[{int $\ast$}]{out,  }\item[{int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a request with given source/destination \mbox{\hyperlink{structIP}{IP}} arrays and time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Pointer to an array of 4 ints representing the source \mbox{\hyperlink{structIP}{IP}}. \\
+\hline
+{\em out} & Pointer to an array of 4 ints representing the destination \mbox{\hyperlink{structIP}{IP}}. \\
+\hline
+{\em t} & Timestamp for the request. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classrequest_a3ca4c2dfad44d32b896d84e60c02b363}\label{classrequest_a3ca4c2dfad44d32b896d84e60c02b363}} 
+\index{request@{request}!inIP@{inIP}}
+\index{inIP@{inIP}!request@{request}}
+\doxysubsubsection{\texorpdfstring{inIP}{inIP}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structIP}{IP}} request\+::in\+IP}
+
+
+
+Incoming/source \mbox{\hyperlink{structIP}{IP}} address. 
+
+\mbox{\Hypertarget{classrequest_a980fd6be5ea34d88c07b3c963f7f39c4}\label{classrequest_a980fd6be5ea34d88c07b3c963f7f39c4}} 
+\index{request@{request}!outIP@{outIP}}
+\index{outIP@{outIP}!request@{request}}
+\doxysubsubsection{\texorpdfstring{outIP}{outIP}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structIP}{IP}} request\+::out\+IP}
+
+
+
+Outgoing/destination \mbox{\hyperlink{structIP}{IP}} address. 
+
+\mbox{\Hypertarget{classrequest_a153095eecc7c0aae5551654c3304faad}\label{classrequest_a153095eecc7c0aae5551654c3304faad}} 
+\index{request@{request}!time@{time}}
+\index{time@{time}!request@{request}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily int request\+::time}
+
+
+
+Timestamp or time associated with the request. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{request_8h}{request.\+h}}\end{DoxyCompactItemize}

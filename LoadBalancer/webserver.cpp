@@ -4,6 +4,14 @@
 
 using namespace std;
 
+/**
+ * @brief Processes the requests assigned to the server at a given time.
+ * 
+ * Removes requests from the queue that have a timestamp less than or equal to the current time,
+ * then updates the server's state to open or closed to new requests based on load.
+ * 
+ * @param time The current simulation time to check requests against.
+ */
 void webserver::processRequests(int time)
 {
     int before = static_cast<int>(requests.size());
@@ -26,7 +34,9 @@ void webserver::processRequests(int time)
     }
 }
 
-
+/**
+ * @brief Marks the server as open to receiving new requests and logs this event.
+ */
 void webserver::askForRequests()
 {
     openToRequests = true;
@@ -35,6 +45,9 @@ void webserver::askForRequests()
     outputFile.close();
 }
 
+/**
+ * @brief Marks the server as closed to new requests and logs this event.
+ */
 void webserver::stopTakingRequests()
 {
     openToRequests = false;

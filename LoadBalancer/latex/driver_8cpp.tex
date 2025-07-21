@@ -1,0 +1,52 @@
+\hypertarget{driver_8cpp}{}\doxysection{driver.\+cpp File Reference}
+\label{driver_8cpp}\index{driver.cpp@{driver.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include \char`\"{}request.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}webserver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}load\+Balancer.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for driver.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrequest}{request}} \mbox{\hyperlink{driver_8cpp_aeae1f54041a4a22c4c50139971c99686}{create\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new request with randomized \mbox{\hyperlink{structIP}{IP}} addresses and time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{driver_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main driver function to initialize load balancer, create webservers, generate requests, and run the simulation clock cycles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{driver_8cpp_aeae1f54041a4a22c4c50139971c99686}\label{driver_8cpp_aeae1f54041a4a22c4c50139971c99686}} 
+\index{driver.cpp@{driver.cpp}!createRequest@{createRequest}}
+\index{createRequest@{createRequest}!driver.cpp@{driver.cpp}}
+\doxysubsubsection{\texorpdfstring{createRequest()}{createRequest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrequest}{request}} create\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new request with randomized \mbox{\hyperlink{structIP}{IP}} addresses and time. 
+
+Allocates two arrays of four integers each to represent in\+IP and out\+IP parts, fills them with random values between 0 and 255, and a random time. Logs the generated request to \char`\"{}log.\+txt\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+request Newly created request object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{driver_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{driver_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{driver.cpp@{driver.cpp}!main@{main}}
+\index{main@{main}!driver.cpp@{driver.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main driver function to initialize load balancer, create webservers, generate requests, and run the simulation clock cycles. 
+
+Prompts user for number of servers, creates and distributes requests, processes requests over simulated time, and logs status updates.
+
+\begin{DoxyReturn}{Returns}
+int Exit status code. 
+\end{DoxyReturn}
